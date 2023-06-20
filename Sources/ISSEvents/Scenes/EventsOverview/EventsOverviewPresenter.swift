@@ -10,5 +10,16 @@ import Foundation
 import SwiftUI
 
 final class EventsOverviewPresenter: ObservableObject {
-    init() {}
+    private var interactor: EventsOverviewBusinessLogic
+    private var router: EventsOverviewRouter?
+
+    init(interactor: EventsOverviewBusinessLogic) {
+        self.interactor = interactor
+    }
+
+    // MARK: Injection
+
+    func setRouter(_ router: EventsOverviewRouter) {
+        self.router = router
+    }
 }

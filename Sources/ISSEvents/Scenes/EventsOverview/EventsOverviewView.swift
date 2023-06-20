@@ -14,6 +14,7 @@ public struct EventsOverviewView: View {
     public var body: some View {
         ZStack(alignment: .top) {
             VStack(spacing: 0) {
+                Text("This is event overview page")
             }
         }
     }
