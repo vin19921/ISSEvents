@@ -25,6 +25,7 @@ public struct EventsOverviewView: View {
         ZStack(alignment: .top) {
             VStack(spacing: 0) {
                 ISSNavigationBarSUI(data: navigationBarData)
+                Spacer()
                 ZStack(alignment: .center) {
                     Text("This is event overview page")
                 }
