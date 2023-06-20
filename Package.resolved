@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "isscommonui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vin19921/ISSCommonUI",
+      "state" : {
+        "branch" : "develop",
+        "revision" : "18a3742ada5d80fdf07abf4dce1bd6a72f3ced68"
+      }
+    },
+    {
       "identity" : "themekitios",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/vin19921/ThemeKitIOS",
