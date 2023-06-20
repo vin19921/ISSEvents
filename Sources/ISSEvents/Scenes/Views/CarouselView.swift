@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct CarouselView: View {
-    let images: [String] = ["example1", "example2"]
+    let images: [Image] = [EventsOverviewImageAssets.example1.image, EventsOverviewImageAssets.example2.image]
     @State private var currentIndex = 0
     @State private var timer: Timer?
     
     var body: some View {
         VStack {
-            Image(images[currentIndex])
+            images[currentIndex]
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 200)
