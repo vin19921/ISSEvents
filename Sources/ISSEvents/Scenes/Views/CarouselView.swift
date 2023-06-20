@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CarouselView: View {
-    let images: [String] = ["seal", "scanner", "scissors", "sparkle"]
+    let images: [String] = ["example1", "example2"]
     @State private var currentIndex = 0
     @State private var timer: Timer?
     
