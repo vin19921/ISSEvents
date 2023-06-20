@@ -11,5 +11,10 @@ protocol EventsOverviewBusinessLogic {
 }
 
 final class EventsOverviewInteractor: EventsOverviewBusinessLogic {
-    init() {}
+    private var provider: EventsDataProviderLogic
+    private var cancellables = Set<AnyCancellable>()
+
+    init(provider: EventsDataProviderLogic) {
+        self.provider = provider
+    }
 }

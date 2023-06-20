@@ -9,6 +9,14 @@ import SwiftUI
 
 public struct EventsOverviewView: View {
 
+    @ObservedObject private var presenter: EventsOverviewPresenter
+
+    // MARK: Injection
+
+    init(presenter: EventsOverviewPresenter) {
+        self.presenter = presenter
+    }
+
     // MARK: View
 
     public var body: some View {

@@ -30,8 +30,7 @@ public enum ISSGateway {
         let presenter = EventsOverviewPresenter(interactor: interactor)
         
         let view = EventsOverviewView(presenter: presenter)
-        let eventsOverviewRouter = EventsOverviewRouter(navigator: router,
-                                                        dataStore: interactor)
+        let eventsOverviewRouter = EventsOverviewRouter(navigator: router)
         
         presenter.setRouter(eventsOverviewRouter)
         return view
@@ -39,11 +38,11 @@ public enum ISSGateway {
 
     private static func injectEventsOverviewProvider(_ provider: EventsDataProviderLogic) {
         let internalDepends = PackageDependency.self
-        internalDepends.setEventsProvider(provider: provider)
+        internalDepends.setEventsOverviewProvider(provider: provider)
     }
 
     private static func injectEventsOverviewRouter(_ router: EventsRoutingLogic) {
         let internalDepends = PackageDependency.self
-        internalDepends.setEventsRouter(router: router)
+        internalDepends.setEventsOverviewRouter(router: router)
     }
 }
