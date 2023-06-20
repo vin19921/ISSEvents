@@ -22,15 +22,18 @@ public struct EventsOverviewView: View {
     // MARK: View
 
     public var body: some View {
-        ZStack(alignment: .top) {
+//        ZStack(alignment: .top) {
             VStack(spacing: 0) {
                 ISSNavigationBarSUI(data: navigationBarData)
                 Spacer()
-                ZStack(alignment: .center) {
+                VStack {
+                    Text("This is event overview page")
+                    Text("This is event overview page")
                     Text("This is event overview page")
                 }
             }
-        }
+            .edgesIgnoringSafeArea(.top)
+//        }
     }
 
     private var navigationBarData: ISSNavigationBarBuilder.ISSNavigationBarData {
