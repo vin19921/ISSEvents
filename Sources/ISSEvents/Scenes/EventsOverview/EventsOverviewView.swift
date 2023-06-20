@@ -25,11 +25,13 @@ public struct EventsOverviewView: View {
 //        ZStack(alignment: .top) {
             VStack(spacing: 0) {
                 ISSNavigationBarSUI(data: navigationBarData)
-                Spacer()
+                CarouselView()
                 VStack {
+                    Spacer()
                     Text("This is event overview page")
                     Text("This is event overview page")
                     Text("This is event overview page")
+                    Spacer()
                 }
             }
             .edgesIgnoringSafeArea(.top)
