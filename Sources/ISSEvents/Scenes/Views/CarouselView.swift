@@ -17,7 +17,7 @@ struct CarouselView: View {
             ForEach(0..<images.count) { index in
                 images[currentIndex]
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
+                    .aspectRatio(contentMode: .fit)
                     .frame(height: 200)
                     .offset(x: CGFloat(index - currentIndex) * UIScreen.main.bounds.width, y: 0)
                     .animation(.easeInOut)
