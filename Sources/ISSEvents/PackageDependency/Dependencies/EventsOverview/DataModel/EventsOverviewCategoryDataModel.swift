@@ -34,9 +34,7 @@ struct EventsOverviewCategoryDataModel: Codable {
     let createdDate: String?
     let modifiedBy: String?
     let modifiedDate: String?
-}
 
-extension EventsOverviewCategoryDataModel {
     enum CodingKeys: String, CodingKey {
         case eventId = "_id"
         case eventName
