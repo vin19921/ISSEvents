@@ -30,10 +30,6 @@ struct EventsOverviewCategoryDataModel: Codable {
     let eventSpeakers: [EventSpeakerDataModel]?
     let eventOrganizer: EventOrganizerDataModel?
     let eventVenueInformation: EventVenueInformationDataModel?
-    let createdBy: String?
-    let createdDate: String?
-    let modifiedBy: String?
-    let modifiedDate: String?
 
     enum CodingKeys: String, CodingKey {
         case eventId = "_id"
