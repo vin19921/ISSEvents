@@ -5,11 +5,11 @@
 //  Created by Wing Seng Chew on 22/06/2023.
 //
 
-struct EventsOverviewWrapper: Codable {
-    let events: [EventsOverviewCategoryDataModel]
+public struct EventsOverviewWrapper: Codable {
+    let events: [EventsOverviewDataModel]
 }
 
-struct EventsOverviewCategoryDataModel: Codable {
+public struct EventsOverviewDataModel: Codable {
     let eventId: String?
     let eventName: String?
     let eventDescription: String?
@@ -55,7 +55,7 @@ struct EventsOverviewCategoryDataModel: Codable {
     }
 }
 
-extension EventsOverviewCategoryDataModel {
+public extension EventsOverviewDataModel {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         eventId = try container.decodeIfPresent(String.self, forKey: .eventId) ?? ""
