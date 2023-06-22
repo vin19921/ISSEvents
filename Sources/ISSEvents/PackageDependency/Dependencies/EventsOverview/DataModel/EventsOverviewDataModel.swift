@@ -6,30 +6,30 @@
 //
 
 public struct EventsOverviewWrapper: Codable {
-    let events: [EventsOverviewDataModel]
+    public let events: [EventsOverviewDataModel]
 }
 
 public struct EventsOverviewDataModel: Codable {
-    let eventId: String?
-    let eventName: String?
-    let eventDescription: String?
-    let eventDate: EventDateDataModel?
-    let eventTime: EventTimeDataModel?
-    let eventDuration: String?
-    let eventRegistration: EventRegistrationDataModel?
-    let eventType: [EventTypeDataModel]?
-    let eventCategory: [EventCategoryDataModel]?
-    let eventTargetAudience: [EventTargetAudienceDataModel]?
-    let eventTermsAndConditions: String?
-    let eventFinePrint: String?
-    let eventPolicy: String?
-    let eventPrice: String?
-    let eventNumberOfTickets: String?
-    let eventStatus: String?
-    let eventCity: [String]?
-    let eventSpeakers: [EventSpeakerDataModel]?
-    let eventOrganizer: EventOrganizerDataModel?
-    let eventVenueInformation: EventVenueInformationDataModel?
+    public let eventId: String?
+    public let eventName: String?
+    public let eventDescription: String?
+    public let eventDate: EventDateDataModel?
+    public let eventTime: EventTimeDataModel?
+    public let eventDuration: String?
+    public let eventRegistration: EventRegistrationDataModel?
+    public let eventType: [EventTypeDataModel]?
+    public let eventCategory: [EventCategoryDataModel]?
+    public let eventTargetAudience: [EventTargetAudienceDataModel]?
+    public let eventTermsAndConditions: String?
+    public let eventFinePrint: String?
+    public let eventPolicy: String?
+    public let eventPrice: String?
+    public let eventNumberOfTickets: String?
+    public let eventStatus: String?
+    public let eventCity: [String]?
+    public let eventSpeakers: [EventSpeakerDataModel]?
+    public let eventOrganizer: EventOrganizerDataModel?
+    public let eventVenueInformation: EventVenueInformationDataModel?
 
     enum CodingKeys: String, CodingKey {
         case eventId = "_id"

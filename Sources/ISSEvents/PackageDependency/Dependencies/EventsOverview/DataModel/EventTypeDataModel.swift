@@ -5,7 +5,7 @@
 //  Created by Wing Seng Chew on 22/06/2023.
 //
 
-struct EventTypeDataModel: Codable {
+public struct EventTypeDataModel: Codable {
     let name: String
 
     enum CodingKeys: String, CodingKey {
@@ -13,7 +13,7 @@ struct EventTypeDataModel: Codable {
     }
 }
 
-extension EventTypeDataModel {
+public extension EventTypeDataModel {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""

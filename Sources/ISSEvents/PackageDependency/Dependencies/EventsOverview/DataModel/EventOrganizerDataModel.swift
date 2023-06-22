@@ -5,7 +5,7 @@
 //  Created by Wing Seng Chew on 22/06/2023.
 //
 
-struct EventOrganizerDataModel: Codable {
+public struct EventOrganizerDataModel: Codable {
     let company: String?
     let contactPerson: [EventContactPersonDataModel]?
 
@@ -15,7 +15,7 @@ struct EventOrganizerDataModel: Codable {
     }
 }
 
-extension EventOrganizerDataModel {
+public extension EventOrganizerDataModel {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         company = try container.decodeIfPresent(String.self, forKey: .company) ?? ""

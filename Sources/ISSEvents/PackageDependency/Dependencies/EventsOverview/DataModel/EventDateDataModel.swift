@@ -5,7 +5,7 @@
 //  Created by Wing Seng Chew on 22/06/2023.
 //
 
-struct EventDateDataModel: Codable {
+public struct EventDateDataModel: Codable {
     let start: String?
     let end: String?
 
@@ -15,7 +15,7 @@ struct EventDateDataModel: Codable {
     }
 }
 
-extension EventDateDataModel {
+public extension EventDateDataModel {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         start = try container.decodeIfPresent(String.self, forKey: .start) ?? ""

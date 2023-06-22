@@ -5,7 +5,7 @@
 //  Created by Wing Seng Chew on 22/06/2023.
 //
 
-struct EventSpeakerDataModel: Codable {
+public struct EventSpeakerDataModel: Codable {
     let name: String?
     let bio: String?
     let photoUrl: String?
@@ -17,7 +17,7 @@ struct EventSpeakerDataModel: Codable {
     }
 }
 
-extension EventSpeakerDataModel {
+public extension EventSpeakerDataModel {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""

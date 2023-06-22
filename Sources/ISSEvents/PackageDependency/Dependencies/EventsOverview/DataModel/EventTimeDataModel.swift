@@ -5,7 +5,7 @@
 //  Created by Wing Seng Chew on 22/06/2023.
 //
 
-struct EventTimeDataModel: Codable {
+public struct EventTimeDataModel: Codable {
     let start: String?
     let end: String?
 
@@ -15,7 +15,7 @@ struct EventTimeDataModel: Codable {
     }
 }
 
-extension EventTimeDataModel {
+public extension EventTimeDataModel {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         start = try container.decodeIfPresent(String.self, forKey: .start) ?? ""

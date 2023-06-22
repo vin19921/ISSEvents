@@ -5,7 +5,7 @@
 //  Created by Wing Seng Chew on 22/06/2023.
 //
 
-struct EventVenueInformationDataModel: Codable {
+public struct EventVenueInformationDataModel: Codable {
     let venueType: String?
     let unit: String?
     let address: String?
@@ -29,7 +29,7 @@ struct EventVenueInformationDataModel: Codable {
     }
 }
 
-extension EventVenueInformationDataModel {
+public extension EventVenueInformationDataModel {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         venueType = try container.decodeIfPresent(String.self, forKey: .venueType) ?? ""
