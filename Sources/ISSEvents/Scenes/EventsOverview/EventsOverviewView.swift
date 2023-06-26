@@ -31,6 +31,18 @@ public struct EventsOverviewView: View {
                     Text("This is event overview page")
                     Text("This is event overview page")
                     Text("This is event overview page")
+                    Button(action: {
+                       // Handle button tap action
+                       print("Button tapped")
+                        presenter.fetchEvents() {_ in }
+                    }) {
+                       Text("Tap Me")
+                           .foregroundColor(.white)
+                           .font(.title)
+                           .padding()
+                           .background(Color.blue)
+                           .cornerRadius(10)
+                    }
                     Spacer()
                 }
             }

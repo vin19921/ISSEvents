@@ -9,6 +9,8 @@ import Combine
 import Foundation
 
 protocol EventsOverviewBusinessLogic {
+    typealias EventsHandler = (Result<EventsOverviewWrapper, Error>) -> Void
+    func fetchEvents(completion: @escaping EventsHandler)
 }
 
 final class EventsOverviewInteractor: EventsOverviewBusinessLogic {
@@ -17,5 +19,9 @@ final class EventsOverviewInteractor: EventsOverviewBusinessLogic {
 
     init(provider: EventsDataProviderLogic) {
         self.provider = provider
+    }
+
+    func fetchEvents(completion: @escaping EventsHandler) {
+        provider.fetchEvents(completion: completion)
     }
 }

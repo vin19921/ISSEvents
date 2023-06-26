@@ -11,6 +11,8 @@ import Combine
 /// The events provider facilitate communication between the controller from the UI layer and the services that are used to retrieve/persist data.
 /// This helps provide proper separation of concerns between the these objects.
 public protocol EventsDataProviderLogic {
+    typealias EventsHandler = (Result<EventsOverviewWrapper, Error>) -> Void
+    func fetchEvents(completion: @escaping EventsHandler)
 }
 
 /// DataFetchTypes helps the service to send send data based on different CachePolicies.
