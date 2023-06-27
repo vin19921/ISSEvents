@@ -8,6 +8,7 @@
 import Foundation
 
 public enum EventsOverviewImageAssets: String, ImageLoader, ImageLoaderSUI {
-    case example1
-    case example2
+    case sample1
+    case sample2
+    case sample3
 }

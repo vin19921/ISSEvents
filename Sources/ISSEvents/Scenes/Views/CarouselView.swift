@@ -8,20 +8,37 @@
 import SwiftUI
 
 struct CarouselView: View {
-    let images: [Image] = [EventsOverviewImageAssets.example1.image, EventsOverviewImageAssets.example2.image]
+    let images: [Image] = [EventsOverviewImageAssets.sample1.image,
+                           EventsOverviewImageAssets.sample2.image,
+                           EventsOverviewImageAssets.sample3.image]
     @State private var currentIndex = 0
     @State private var timer: Timer?
     
     var body: some View {
         VStack {
-            ForEach(0..<images.count) { index in
+            ForEach(images.indices, id: \.self) { index in
                 images[currentIndex]
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(height: 200)
+                    .frame(height: 400)
                     .offset(x: CGFloat(index - currentIndex) * UIScreen.main.bounds.width, y: 0)
                     .animation(.easeInOut)
+                    .onTapGesture {
+                        print("image \(currentIndex) tapped")
+                        print("image \(index) tapped")
+                    }
             }
+//            ForEach(0..<images.count) { index in
+//                images[currentIndex]
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fit)
+//                    .frame(height: 400)
+//                    .offset(x: CGFloat(index - currentIndex) * UIScreen.main.bounds.width, y: 0)
+//                    .animation(.easeInOut)
+//                    .onTapGesture {
+//                        print("image \(currentIndex) tapped")
+//                    }
+//            }
             
             HStack(spacing: 10) {
                 ForEach(0..<images.count) { index in

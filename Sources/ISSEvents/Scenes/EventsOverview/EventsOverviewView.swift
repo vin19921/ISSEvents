@@ -26,7 +26,6 @@ public struct EventsOverviewView: View {
             VStack(spacing: 0) {
                 ISSNavigationBarSUI(data: navigationBarData)
                 CarouselView()
-                    .frame(height: 300)
                 VStack {
                     Spacer()
                     Button(action: {
