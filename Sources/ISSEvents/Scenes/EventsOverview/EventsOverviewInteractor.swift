@@ -11,6 +11,8 @@ import Foundation
 protocol EventsOverviewBusinessLogic {
     typealias EventsHandler = (Result<EventsOverviewWrapper, Error>) -> Void
     func fetchEvents(completion: @escaping EventsHandler)
+    typealias EmployeeHandler = (Result<EmployeesResponse, Error>) -> Void
+    func fetchEmployee(completion: @escaping EmployeeHandler)
 }
 
 final class EventsOverviewInteractor: EventsOverviewBusinessLogic {
@@ -23,5 +25,9 @@ final class EventsOverviewInteractor: EventsOverviewBusinessLogic {
 
     func fetchEvents(completion: @escaping EventsHandler) {
         provider.fetchEvents(completion: completion)
+    }
+
+    func fetchEmployee(completion: @escaping EmployeeHandler) {
+        provider.fetchEmployee(completion: completion)
     }
 }

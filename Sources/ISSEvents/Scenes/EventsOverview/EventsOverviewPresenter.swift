@@ -100,4 +100,33 @@ final class EventsOverviewPresenter: ObservableObject {
 
     }
 
+    func fetchEmployee(completion: @escaping (Result<EmployeesResponse, Error>) -> Void)
+    {
+        
+        interactor.fetchEmployee(completion: { [weak self] result in
+//            guard let self = self else { return }
+//            self.inProgress = false
+            switch result {
+            case let .success(result):
+//                guard let appConfigData = appConfigDataModel?.config,
+//                      let appConfiguration = self.convertToViewModel(appConfigData: appConfigData)
+//                else {
+//                    self.logger.debug("AppConfigurationManager: Invalid app config data or Unable to parse app config data into AppConfiguration model")
+//                    completion(.failure("CommonServiceError.invalidDataInFile"))
+//                    return
+//                }
+//                self.appConfiguration = appConfiguration
+//                self.updateEnvironment(appConfiguration: appConfiguration)
+//
+//                let featureFlags = appConfiguration.platforms.ios.featureFlags
+//                self.updateFeatureFlags(featureFlags: featureFlags)
+                completion(.success(result))
+
+            case let .failure(error):
+//                self.logger.error("AppConfigurationManager: fetch app config error: \(error.localizedDescription)")
+                completion(.failure(error))
+            }
+        })
+
+    }
 }

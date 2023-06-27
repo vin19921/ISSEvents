@@ -12,7 +12,9 @@ import Combine
 /// This helps provide proper separation of concerns between the these objects.
 public protocol EventsDataProviderLogic {
     typealias EventsHandler = (Result<EventsOverviewWrapper, Error>) -> Void
+    typealias EmployeeHandler = (Result<EmployeesResponse, Error>) -> Void
     func fetchEvents(completion: @escaping EventsHandler)
+    func fetchEmployee(completion: @escaping EmployeeHandler)
 }
 
 /// DataFetchTypes helps the service to send send data based on different CachePolicies.
