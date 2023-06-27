@@ -26,11 +26,9 @@ public struct EventsOverviewView: View {
             VStack(spacing: 0) {
                 ISSNavigationBarSUI(data: navigationBarData)
                 CarouselView()
+                    .frame(height: 300)
                 VStack {
                     Spacer()
-                    Text("This is event overview page")
-                    Text("This is event overview page")
-                    Text("This is event overview page")
                     Button(action: {
                        // Handle button tap action
                        print("Button tapped")
@@ -46,8 +44,11 @@ public struct EventsOverviewView: View {
                     }
                     Spacer()
                     switch presenter.state {
-                    case let .success(_):
+                    case let .success(viewModel):
                         Text("Success")
+                        ForEach(Array(viewModel.employeeList.enumerated()), id: \.element.id) { index, section in
+                            Text("\(index). \(section.employeeName)")
+                        }
                     case .isLoading:
                         Text("Loading...")
                     case .failure(_):
