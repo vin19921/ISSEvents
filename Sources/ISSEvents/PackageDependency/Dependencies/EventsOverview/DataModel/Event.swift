@@ -6,10 +6,10 @@
 //
 
 public struct EventsOverviewWrapper: Codable {
-    public let events: [EventsOverviewDataModel]
+    public let events: [Event]
 }
 
-public struct EventsOverviewDataModel: Codable {
+public struct Event: Codable {
     public let eventId: String?
     public let eventName: String?
     public let eventDescription: String?
@@ -55,7 +55,7 @@ public struct EventsOverviewDataModel: Codable {
     }
 }
 
-public extension EventsOverviewDataModel {
+public extension Event {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         eventId = try container.decodeIfPresent(String.self, forKey: .eventId) ?? ""
@@ -80,4 +80,5 @@ public extension EventsOverviewDataModel {
         eventVenueInformation = try container.decodeIfPresent(EventVenueInformationDataModel.self, forKey: .eventVenueInformation)
     }
 }
+
 

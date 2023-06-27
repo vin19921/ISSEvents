@@ -15,6 +15,7 @@ public protocol EventsDataProviderLogic {
     typealias EmployeeHandler = (Result<EmployeesResponse, Error>) -> Void
     func fetchEvents(completion: @escaping EventsHandler)
     func fetchEmployee(completion: @escaping EmployeeHandler)
+    func fetchEmployeeTest() -> AnyPublisher<EmployeesResponse, Error>
 }
 
 /// DataFetchTypes helps the service to send send data based on different CachePolicies.

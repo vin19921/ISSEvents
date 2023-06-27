@@ -44,6 +44,14 @@ public struct EventsOverviewView: View {
                            .cornerRadius(10)
                     }
                     Spacer()
+                    switch presenter.state {
+                    case let .success(_):
+                        Text("Success")
+                    case .isLoading:
+                        Text("Loading...")
+                    case .failure(_):
+                        Text("Failure")
+                    }
                 }
             }
             .edgesIgnoringSafeArea(.top)
