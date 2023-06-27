@@ -133,6 +133,19 @@ final class EventsOverviewPresenter: ObservableObject {
 
 //    func fetchEmployeeTest() -> AnyPublisher<EmployeeOverview.Model.Response, Error> {
 //    }
+
+    func fetchEmployees() {
+        fetchEmployeeTest() { result in
+            switch result {
+            case let .success(success):
+                self.handleEventsResponse(response: success)
+            case let .failure(_):
+//                self.handleError(error: error)
+                print("Error")
+            }
+        }
+    }
+    
     func fetchEmployeeTest(completion: @escaping (Result<EmployeeOverview.Model.Response, Error>) -> Void) {
         interactor.fetchEmployeeTest()
             .receive(on: DispatchQueue.main)
@@ -153,10 +166,15 @@ final class EventsOverviewPresenter: ObservableObject {
             }, receiveValue: { response in
 //                self.isAPICallInProgress = false
 //                completion(.success(response))
-                let viewModel = EmployeeOverview.Model.ViewModel(employeeList: response.employees)
-                self.state = .success(viewModel)
+              
+                completion(.success(response))
             })
             .store(in: &cancellables)
+    }
+
+    func handleEventsResponse(response: EmployeeOverview.Model.Response) {
+        let viewModel = EmployeeOverview.Model.ViewModel(employeeList: response.employees)
+        self.state = .success(viewModel)
     }
 }
 

@@ -34,7 +34,8 @@ public struct EventsOverviewView: View {
                     Button(action: {
                        // Handle button tap action
                        print("Button tapped")
-                        presenter.fetchEmployee() {_ in }
+//                        presenter.fetchEmployee() {_ in }
+                        presenter.fetchEmployees()
                     }) {
                        Text("Tap Me")
                            .foregroundColor(.white)
