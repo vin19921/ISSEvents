@@ -6,11 +6,11 @@
 //
 
 public struct Employee: Codable {
-    let id: Int
-    let employeeName: String
-    let employeeSalary: Int
-    let employeeAge: Int
-    let profileImage: String?
+    public let id: Int
+    public let employeeName: String
+    public let employeeSalary: Int
+    public let employeeAge: Int
+    public let profileImage: String?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -22,9 +22,9 @@ public struct Employee: Codable {
 }
 
 public struct EmployeesResponse: Codable {
-    let status: String
-    let data: [Employee]
-    let message: String
+    public let status: String
+    public let data: [Employee]
+    public let message: String
 }
 
 public extension EmployeesResponse {
