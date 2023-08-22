@@ -23,7 +23,7 @@ let package = Package(
         .target(
             name: "ISSEvents",
             dependencies: [.product(name: "ISSTheme", package: "iSSBooking-iOS-Theme"),
-                           "ISSCommonUI",
+                           .product(name: "ISSCommonUI", package: "iSSBooking-iOS-CommonUI"),
             ]),
         .testTarget(
             name: "ISSEventsTests",
