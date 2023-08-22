@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  EventDetailSection.swift
 //  
 //
 //  Copyright by iSoftStone 2023.
@@ -13,9 +13,6 @@ struct EventDetailSection: View {
 
     let eventsDetailSectionTitle: String
     var eventDetailSection: [EventDetailCell.ViewData]
-//    let didTapOnContentButton: (EventDetailCell.ActionType?) -> Void
-//    let isRegistered: Bool
-//    let eventsMode: EventsMode
 
     // MARK: - Body
 
@@ -23,22 +20,8 @@ struct EventDetailSection: View {
         VStack(alignment: .leading, spacing: .zero) {
             sectionTitle
             VStack(alignment: .leading, spacing: .zero) {
-                ForEach(eventDetailSection) { section in
-                    eventSectionCell(section: section)
-//                    switch section.displayType {
-//                    case .eventType, .regRequired:
-////                        if eventsMode == .weblinks {
-//                            eventSectionCell(section: section)
-////                        }
-//                    case .eventDate, .eventLocation:
-//                        eventSectionCell(section: section)
-//                    case .ticketCapacity, .language:
-////                        if eventsMode == .booking {
-//                            eventSectionCell(section: section)
-////                        }
-//                    case .none:
-//                        eventSectionCell(section: section)
-//                    }
+                ForEach(eventDetailSection) { viewData in
+                    eventSectionCell(viewData: viewData)
                 }
             }
         }
@@ -58,17 +41,10 @@ private extension EventDetailSection {
             .fontWithLineHeight(font: Theme.current.subtitle.uiFont,
                                 lineHeight: Theme.current.subtitle.lineHeight,
                                 verticalPadding: .zero)
-//            .accessibilityIdentifier(AutomationControl.sectionTitle.accessibilityIdentifier())
     }
 
-    func eventSectionCell(section: EventDetailCell.ViewData) -> some View {
-        EventDetailCell(viewData: section
-//                        ,
-//                        didTapOnButton: { action in didTapOnContentButton(action) },
-//                        isRegistered: isRegistered
-//                        ,
-//                        eventMode: eventsMode
-        )
+    func eventSectionCell(viewData: EventDetailCell.ViewData) -> some View {
+        EventDetailCell(viewData: viewData)
     }
 }
 
@@ -82,12 +58,3 @@ private extension EventDetailSection {
         static let detailsSpacing: CGFloat = 16.0
     }
 }
-
-// MARK: - Automation Ids
-
-extension EventDetailSection {
-//    enum AutomationControl: String, AccessibilityIdentifierProvider {
-//        case sectionTitle
-//    }
-}
-

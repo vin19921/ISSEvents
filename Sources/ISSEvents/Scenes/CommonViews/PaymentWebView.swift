@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  PaymentWebView.swift
 //  
 //
 //  Copyright by iSoftStone 2023.
@@ -11,13 +11,13 @@ import WebKit
 struct PaymentWebView: UIViewRepresentable {
     let paymentURLString: String
     let paymentCompletionHandler: (Bool) -> Void
-    
+
     func makeUIView(context: Context) -> WKWebView {
         let webView = WKWebView()
         webView.navigationDelegate = context.coordinator
         return webView
     }
-    
+
     func updateUIView(_ uiView: WKWebView, context: Context) {
         if let url = URL(string: paymentURLString) {
             let request = URLRequest(url: url)
@@ -26,11 +26,11 @@ struct PaymentWebView: UIViewRepresentable {
             }
         }
     }
-    
+
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
-    
+
     class Coordinator: NSObject, WKNavigationDelegate {
         var parent: PaymentWebView
         

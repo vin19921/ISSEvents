@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  EventTimeDataModel.swift
 //  
 //
 //  Copyright by iSoftStone 2023.

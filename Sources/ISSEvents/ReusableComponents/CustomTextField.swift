@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  CustomTextField.swift
 //
 //
 //  Copyright by iSoftStone 2023.
@@ -29,23 +29,14 @@ struct CustomTextField: UIViewRepresentable {
         textField.font = font
         textField.keyboardType = keyboardType
         textField.delegate = context.coordinator
-//        textField.placeholder = placeholder // Set the placeholder
         textField.attributedPlaceholder = createPlaceholder() // Set the attributed placeholder
         // Add a tap gesture recognizer
         let tapGesture = UITapGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.textFieldTapped))
         textField.addGestureRecognizer(tapGesture)
-//        addToolbar(textField)
         return textField
     }
 
     func updateUIView(_ uiView: UITextField, context: Context) {
-//        guard isFirstResponder, !uiView.isFirstResponder else {
-//            return
-//        }
-//        DispatchQueue.main.async {
-//            uiView.becomeFirstResponder()
-//        }
-
         if isFirstResponder {
             DispatchQueue.main.async {
                 uiView.becomeFirstResponder() // Show the keyboard if isFirstResponder is true

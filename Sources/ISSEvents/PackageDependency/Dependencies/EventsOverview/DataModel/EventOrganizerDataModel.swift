@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  EventOrganizerDataModel.swift
 //  
 //
 //  Copyright by iSoftStone 2023.

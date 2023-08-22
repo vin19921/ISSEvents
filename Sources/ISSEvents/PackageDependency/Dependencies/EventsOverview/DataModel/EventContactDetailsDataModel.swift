@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  EventContactDetailsDataModel.swift
 //  
 //
 //  Copyright by iSoftStone 2023.

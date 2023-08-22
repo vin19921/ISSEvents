@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  EventDetailHeaderView.swift
 //  
 //
 //  Copyright by iSoftStone 2023.

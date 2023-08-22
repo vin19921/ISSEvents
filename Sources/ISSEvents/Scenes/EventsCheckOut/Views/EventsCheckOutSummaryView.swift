@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  EventsCheckOutSummaryView.swift
 //  
 //
 //  Copyright by iSoftStone 2023.
@@ -122,19 +122,6 @@ struct EventsCheckOutSummaryView: View {
                 print("Pay btn")
                 didTapPayButton()
             }) {
-//                HStack(alignment: .center) {
-//                    Spacer()
-//                    Text("Pay")
-//                        .fontWithLineHeight(font: Theme.current.bodyTwoMedium.uiFont,
-//                                            lineHeight: Theme.current.bodyTwoMedium.lineHeight,
-//                                            verticalPadding: 0)
-//                    Spacer()
-//                }
-//                .frame(height: 40)
-//                .foregroundColor(.white)
-//                .background(Color.black)
-//                .padding(.all)
-
                 Text("Pay")
                     .fontWithLineHeight(font: Theme.current.bodyTwoMedium.uiFont,
                                         lineHeight: Theme.current.bodyTwoMedium.lineHeight,
@@ -145,47 +132,9 @@ struct EventsCheckOutSummaryView: View {
                     .cornerRadius(12)
             }
             .padding()
-//            .background(
-//                RoundedRectangle(cornerRadius: 12)
-//                    .foregroundColor(.black)
-//            )
         }
-//        .frame(minHeight: 200, idealHeight: 250)
         .frame(height: frameHeight)
         .background(Color.white)
-//        .offset(x: 0, y: dragOffset)
-//        .gesture(DragGesture()
-//            .onChanged { gesture in
-//                if gesture.translation.height < 0 {
-//                    dragOffset = abs(gesture.translation.height)
-//                    if frameHeight + dragOffset > maxHeight {
-//                        frameHeight = maxHeight
-//                        isDragEnded = true
-//                    } else {
-//                        frameHeight = frameHeight + dragOffset
-//                    }
-//                } else {
-//                    dragOffset = gesture.translation.height
-//                    if frameHeight - dragOffset < minHeight {
-//                        frameHeight = minHeight
-//                        isDragEnded = true
-//                    } else {
-//                        frameHeight = frameHeight - dragOffset
-//                    }
-//                }
-//                print("dragging...")
-//            }
-//            .onEnded { gesture in
-//                if isDragEnded {
-//                    // Perform actions when the end threshold is reached
-//                    print("Drag ended at threshold")
-//                    isDragEnded = false // Reset the flag
-//                } else {
-//                    // Perform other actions when drag ends
-//                    print("Drag ended normally")
-//                    dragOffset = 0
-//                }
-//            })
     }
 
     private func formattedSubtotal() -> String {
@@ -226,6 +175,5 @@ struct DraggableBottomSheetView: View {
                                 })
             }
         }
-//        .background(Color.gray.edgesIgnoringSafeArea(.all))
     }
 }

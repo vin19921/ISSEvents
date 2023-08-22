@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  TitleDescriptionSUIView.swift
 //  
 //
 //  Copyright by iSoftStone 2023.
@@ -28,7 +28,6 @@ struct TitleDescriptionSUIView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-//            viewData.isRegistered ? isRegisteredLabel : nil
             titleText
             descriptionText
             if descriptionTruncates {
@@ -41,33 +40,12 @@ struct TitleDescriptionSUIView: View {
 // MARK: - View Components
 
 private extension TitleDescriptionSUIView {
-//    var isRegisteredLabel: some View {
-//            HStack {
-//                viewData.registeredIcon
-//                    .renderingMode(.template)
-//                    .aspectRatio(contentMode: .fit)
-//                    .frame(width: 24, height: 24)
-////                    .accessibilityIdentifier(AutomationControl.registeredIcon.accessibilityIdentifier())
-//                Text(viewData.registeredText)
-//                    .fontWithLineHeight(font: Theme.current.bodyTwoMedium.uiFont,
-//                                        lineHeight: Theme.current.bodyTwoMedium.lineHeight,
-//                                        verticalPadding: 0)
-////                    .accessibilityIdentifier(AutomationControl.isRegisteredLabel.accessibilityIdentifier())
-//            }
-//            .padding([.top,.bottom], 4)
-//            .padding([.leading,.trailing], 8)
-//            .background(Theme.current.darkOrange.color)
-//            .foregroundColor(Theme.current.lightOrange.color)
-//            .cornerRadius(4)
-//        }
-
     var titleText: some View {
         Text(viewData.title)
             .foregroundColor(Theme.current.issBlack.color)
             .fontWithLineHeight(font: Theme.current.headline4.uiFont,
                                 lineHeight: Theme.current.headline4.lineHeight,
                                 verticalPadding: 0)
-//            .accessibilityIdentifier(AutomationControl.titleLabel.accessibilityIdentifier())
     }
 
     var descriptionText: some View {
@@ -130,7 +108,6 @@ private extension TitleDescriptionSUIView {
                                     lineHeight: Theme.current.bodyTwoBold.lineHeight,
                                     verticalPadding: 0)
         }
-//        .accessibilityIdentifier(AutomationControl.viewMoreButton.accessibilityIdentifier())
     }
 
     private func descriptionAndAllSessions() -> String {
@@ -147,9 +124,6 @@ extension TitleDescriptionSUIView {
         let description: String
         let viewMoreText: String
         let viewLessText: String
-//        let isRegistered: Bool
-//        let registeredText: String
-//        let registeredIcon: Image
         let eventSessions: [TextWithStyle] = []
     }
 
@@ -215,26 +189,14 @@ private extension TitleDescriptionSUIView {
     }
 }
 
-// MARK: - Automation Ids
-
-extension TitleDescriptionSUIView {
-//    enum AutomationControl: String, AccessibilityIdentifierProvider {
-//        case titleLabel
-//        case descriptionLabel
-//        case viewMoreButton
-//        case isRegisteredLabel
-//        case registeredIcon
-//    }
-}
-
 struct TextWithStyle: Hashable {
     let text: String
     let isBold: Bool
-    
+
     static func == (lhs: TextWithStyle, rhs: TextWithStyle) -> Bool {
         return lhs.text == rhs.text && lhs.isBold == rhs.isBold
     }
-    
+
     func hash(into hasher: inout Hasher) {
         hasher.combine(text)
         hasher.combine(isBold)

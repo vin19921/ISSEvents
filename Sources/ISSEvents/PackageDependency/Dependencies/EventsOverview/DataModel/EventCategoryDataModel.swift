@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  EventCategoryDataModel.swift
 //  
 //
 //  Copyright by iSoftStone 2023.

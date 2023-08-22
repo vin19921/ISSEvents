@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  EventsPaymentView.swift
 //  
 //
 //  Copyright by iSoftStone 2023.
@@ -22,22 +22,6 @@ public struct EventsPaymentView: View {
     }
 
     public var body: some View {
-//        VStack {
-//            RefreshableScrollView(showsIndicators: false, loaderOffset: 0) { refreshComplete in
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-//                    refreshData(completionHandler: refreshComplete)
-//                    print("refreshComplete")
-//                }
-//            } content: {
-//                VStack(spacing: 0) {
-//                    ForEach(data, id: \.self) { item in
-//                        Text(item)
-//                            .padding()
-//                    }
-//                }
-//                .background(Color.clear)
-//            }
-//        }
         VStack {
             if isLoading {
                 ProgressView("Loading...")
@@ -78,38 +62,6 @@ public struct EventsPaymentView: View {
         completionHandler?()
    }
 }
-
-//public struct EventsPaymentView: View {
-//    @ObservedObject private var presenter: EventsPaymentPresenter
-//    @State private var isLoading = true
-//    @State private var error: Error? = nil
-//    let url: URL? = URL(string: "https://www.google.com")
-//
-//    init(presenter: EventsPaymentPresenter) {
-//        self.presenter = presenter
-//    }
-//
-//    public var body: some View {
-//        ZStack {
-//            if let error = error {
-//                Text(error.localizedDescription)
-//                    .foregroundColor(.pink)
-//            } else if let url = url {
-//                WebView(url: url,
-//                       isLoading: $isLoading)
-//                     .edgesIgnoringSafeArea(.all)
-//                if isLoading {
-//                    ProgressView("Loading...")
-//                        .progressViewStyle(CircularProgressViewStyle())
-//                        .padding()
-//                }
-//            } else {
-//                Text("Sorry, we could not load this url.")
-//            }
-//        }
-//    }
-//}
-
 
 private struct SafeAreaInsetsKey: EnvironmentKey {
     static var defaultValue: EdgeInsets {

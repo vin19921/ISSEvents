@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  MonthPickerView.swift
 //  
 //
 //  Copyright by iSoftStone 2023.
@@ -14,7 +14,6 @@ struct MonthPickerView: View {
     let columns = 3
 
     @Binding var selectedMonth: String
-//    var monthSelected: (String) -> Void
     
     init(selectedMonth: Binding<String>, monthSelected: @escaping (String) -> Void) {
         _selectedMonth = selectedMonth
@@ -31,7 +30,6 @@ struct MonthPickerView: View {
                 }
             }
             .padding()
-//            .background(Color.red)
             .frame(height: 168)
         }
     }

@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  EventsPromoCodeView.swift
 //  
 //
 //  Copyright by iSoftStone 2023.
@@ -25,13 +25,9 @@ public struct EventsPromoCodeView: View {
     // MARK: Injection
     
     @Environment(\.presentationMode) private var presentationMode
-//    @EnvironmentObject var promoCodeViewModel: PromoCodeViewModel
     
-    init(presenter: EventsPromoCodePresenter
-//         , viewModel: PromoCodeViewModel
-    ) {
+    init(presenter: EventsPromoCodePresenter) {
         self.presenter = presenter
-//        self.viewModel = viewModel
     }
 
     private var statusBarHeight: CGFloat {
@@ -106,7 +102,7 @@ public struct EventsPromoCodeView: View {
                         }
                     }
                     .background(Theme.current.issWhite.color)
-//
+
                 case .failure:
                     VStack{
                         Text("Promo Code Scene: Failure")
@@ -133,9 +129,7 @@ public struct EventsPromoCodeView: View {
                                                 lineHeight: Theme.current.bodyTwoMedium.lineHeight,
                                                 verticalPadding: 0)
                             .padding()
-//                        Spacer()
                     }
-//                    .padding(.bottom, 40)
                 }
                 .frame(maxWidth: .infinity)
                 .frame(height: 200)
@@ -145,7 +139,6 @@ public struct EventsPromoCodeView: View {
             .animation(.easeOut(duration: 0.2), value: isSheetPresented)
 
         }
-//        .environmentObject(PromoCodeViewModel())
     }
 
     private var navigationBarData: ISSNavigationBarBuilder.ISSNavigationBarData {
@@ -193,7 +186,6 @@ public struct EventsPromoCodeView: View {
 
                     Button(action: {
                         print("tapped \(promo) apply button")
-//                        PromoCodeViewModel.shared.promoCode = promo
                         viewModel.applyPromoCode(code: promo, price: 5.00)
                         presentationMode.wrappedValue.dismiss()
                     }) {

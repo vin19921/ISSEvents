@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  EventTargetAudienceDataModel.swift
 //  
 //
 //  Copyright by iSoftStone 2023.

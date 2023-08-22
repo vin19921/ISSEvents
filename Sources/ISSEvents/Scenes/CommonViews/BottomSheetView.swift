@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  BottomSheetView.swift
 //  
 //
 //  Copyright by iSoftStone 2023.
@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct BottomSheetView<Content: View>: View {
-
     @Binding var isSheetPresented: Bool
     @ViewBuilder var content: () -> Content
 
@@ -44,7 +43,6 @@ struct BottomSheetView<Content: View>: View {
                     }
                     .saveSize(in: $size)
                     .transition(.move(edge: .bottom))
-//                    .animation(.easeInOut(duration: 0.2))
                     .cornerRadius(20)
                 }
             }

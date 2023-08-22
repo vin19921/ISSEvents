@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  EventsCheckOutDetailsView.swift
 //  
 //
 //  Copyright by iSoftStone 2023.
@@ -13,13 +13,9 @@ struct EventsCheckOutDetailsView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: .zero) {
-//            HStack {
-//            Spacer()
             EventsOverviewImageAssets.test.image
                 .resizable()
-//                    .aspectRatio(contentMode: .fill)
                 .frame(width: UIScreen.main.bounds.width - 32, height: 80)
-//            }
             Spacer()
 
             HStack {
@@ -60,10 +56,6 @@ struct EventsCheckOutDetailsView: View {
                                         lineHeight: Theme.current.bodyOneBold.lineHeight,
                                         verticalPadding: 0)
                 Spacer()
-//                Text("1")
-//                    .fontWithLineHeight(font: Theme.current.bodyOneBold.uiFont,
-//                                        lineHeight: Theme.current.bodyOneBold.lineHeight,
-//                                        verticalPadding: 0)
                 HStack(spacing: 16) {
                     Button(action: {
                         decrementQuantity()
@@ -72,8 +64,6 @@ struct EventsCheckOutDetailsView: View {
                             Image(systemName: "minus")
                                 .frame(width: 20, height: 20)
                                 .foregroundColor(selectedQuantity <= 1 ? .gray : .black)
-//                                .background(Color.yellow)
-
                         }
                     }
                     .disabled(selectedQuantity <= 1)
@@ -90,14 +80,12 @@ struct EventsCheckOutDetailsView: View {
                             Image(systemName: "plus")
                                 .frame(width: 20, height: 20)
                                 .foregroundColor(.black)
-//                                .background(Color.yellow)
                         }
                     }
                 }
             }
             .padding(.all)
         }
-//        .padding(.top)
         .background(Theme.current.issWhite.color)
         .cornerRadius(12)
         .frame(width: UIScreen.main.bounds.width - 32, height: 250)
@@ -106,16 +94,12 @@ struct EventsCheckOutDetailsView: View {
     private func decrementQuantity() {
         if selectedQuantity > 1 {
             selectedQuantity -= 1
-//            yearSelected(selectedYear)
         }
         print("selectedQuantity::: \(selectedQuantity)")
     }
 
     private func incrementQuantity() {
-//        if selectedYear < endYear {
         selectedQuantity += 1
         print("selectedQuantity::: \(selectedQuantity)")
-//            yearSelected(selectedYear)
-//        }
     }
 }

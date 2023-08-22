@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  EventsListCellView.swift
 //  
 //
 //  Copyright by iSoftStone 2023.
@@ -9,7 +9,6 @@ import ISSTheme
 import SwiftUI
 
 struct EventsListCellView: View {
-//    let color: Color
     let image: Image
     @State private var isExpanded = false
     let actionImage = [Image(systemName: "info.circle"),
@@ -17,7 +16,7 @@ struct EventsListCellView: View {
                        Image(systemName: "heart")]
     var onTapInfoAction: (() -> Void)?
     var onTapCartAction: (() -> Void)?
-    
+
     var body: some View {
         VStack(spacing: .zero) {
             cellView
@@ -29,7 +28,7 @@ struct EventsListCellView: View {
         .cornerRadius(12)
         .padding([.top, .horizontal])
     }
-    
+
     var cellView: some View {
         HStack {
             VStack(alignment: .leading, spacing: .zero) {

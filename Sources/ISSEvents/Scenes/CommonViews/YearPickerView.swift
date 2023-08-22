@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  YearPickerView.swift
 //  
 //
 //  Copyright by iSoftStone 2023.
@@ -44,7 +44,6 @@ struct YearPickerView: View {
                 .fontWithLineHeight(font: Theme.current.bodyOneMedium.uiFont,
                                     lineHeight: Theme.current.bodyOneMedium.lineHeight,
                                     verticalPadding: 0)
-//                .font(.title)
 
             Button(action: {
                 incrementYear()
@@ -54,16 +53,10 @@ struct YearPickerView: View {
                         .font(.title)
                         .foregroundColor(selectedYear >= endYear ? .gray : .black)
                 }
-//                .frame(height: 40)
             }
             .disabled(selectedYear >= endYear)
         }
-//        .padding(.vertical, 8)
         .frame(height: 40)
-//        .background(Color.green)
-//        .padding()
-//        .background(Color.gray.opacity(0.2))
-//        .cornerRadius(20)
     }
 
     private func incrementYear() {

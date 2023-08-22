@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  PromoCodeViewModel.swift
 //  
 //
 //  Copyright by iSoftStone 2023.

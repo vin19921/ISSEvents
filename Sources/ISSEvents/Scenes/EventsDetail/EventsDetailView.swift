@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  EventsDetailView.swift
 //  
 //
 //  Copyright by iSoftStone 2023.
@@ -109,7 +109,6 @@ public struct EventsDetailView: View {
         let leftAlignedItem = ToolBarItemDataBuilder()
             .setImage(Image(systemName: "chevron.backward"))
             .setCallback {
-//                promoCodeViewModel.resetPromoCode()
                 self.presentationMode.wrappedValue.dismiss()
             }
             .build()
@@ -119,7 +118,6 @@ public struct EventsDetailView: View {
             .build()
         let toolBarItems = ToolBarItemsDataBuilder()
             .setLeftAlignedItem(leftAlignedItem)
-//            .setLeftAlignedSecondItem(leftAlignedSecondItem)
             .build()
         let issNavBarData = ISSNavigationBarBuilder()
             .setToolBarItems(toolBarItems)

@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  SearchButtonsListView.swift
 //  
 //
 //  Copyright by iSoftStone 2023.

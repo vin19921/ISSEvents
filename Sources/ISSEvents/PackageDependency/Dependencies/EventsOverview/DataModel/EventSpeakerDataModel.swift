@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  EventSpeakerDataModel.swift
 //  
 //
 //  Copyright by iSoftStone 2023.

@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  EventsOverviewView.swift
 //  
 //
 //  Copyright by iSoftStone 2023.
@@ -25,7 +25,6 @@ public struct EventsOverviewView: View {
     init(presenter: EventsOverviewPresenter) {
         self.presenter = presenter
         UIScrollView.appearance().showsVerticalScrollIndicator = false
-//        UICollectionView.appearance().backgroundColor = .clear
     }
 
     // MARK: View
@@ -55,68 +54,12 @@ public struct EventsOverviewView: View {
                             // Fallback on earlier versions
                         }
                     }
-//                CarouselView()
-//                CarouselViewT(content: [
-//                    Color.red,
-//                    Color.green,
-//                    Color.blue
-//                ])
-                //                    Color.red
-//                        .frame(width: UIScreen.main.bounds.width - 32, height: 300)
-//                        .cornerRadius(12)
-//                    Color.green
-//                        .frame(width: UIScreen.main.bounds.width - 32, height: 300)
-//                        .cornerRadius(12)
-//                    Color.blue
-//                        .frame(width: UIScreen.main.bounds.width - 32, height: 300)
-//                        .cornerRadius(12)
-//                    Color.gray
-//                        .frame(width: UIScreen.main.bounds.width - 32, height: 300)
-//                        .cornerRadius(12)
-//                    Color.orange
-//                        .frame(width: UIScreen.main.bounds.width - 32, height: 300)
-//                        .cornerRadius(12)
                 }
-                
-//                VStack {
-                    //                    Spacer()
-                    //                    HStack {
-                    //                        Button(action: {
-                    //                            // Handle button tap action
-                    //                            print("Button tapped")
-                    //                            //                        presenter.fetchEmployee() {_ in }
-                    //                            presenter.fetchEmployees()
-                    //                        }) {
-                    //                            Text("Tap Me")
-                    //                                .foregroundColor(.white)
-                    //                                .font(.title)
-                    //                                .padding()
-                    //                                .background(Color.blue)
-                    //                                .cornerRadius(10)
-                    //                        }
-                    //                    }
-                    //                    Spacer()
-                    //                    switch presenter.state {
-                    //                    case let .success(viewModel):
-                    //                        Text("Success")
-                    //                        ForEach(Array(viewModel.employeeList.enumerated()), id: \.element.id) { index, section in
-                    //                            Text("\(index). \(section.employeeName)")
-                    //                        }
-                    //                    case .isLoading:
-                    //                        Text("Loading...")
-                    //                    case .failure(_):
-                    //                        Text("Failure")
-                    //                    }
-//                }
-//                Spacer()
             }
         }
         .edgesIgnoringSafeArea(.top)
-//        .background(Theme.current.grayDisabled.color)
-//            .background(Color.orange)
-//        }
-
     }
+
     private var sectionHeaderView: some View {
         Color.red.listRowInsets(EdgeInsets()).frame(height: .zero)
     }
@@ -145,13 +88,9 @@ public struct EventsOverviewView: View {
                 .padding(.vertical)
             }
             .frame(height: 350)
-//            .padding(.vertical)
         }
-//        .background(Theme.current.grayDisabled.color)
         .listRowBackground(Theme.current.grayDisabled.color)
-//        .foregroundColor(upcomingEvents.isEmpty ? Theme.current.amwayWhite.color : Theme.current.amwayBlack.color)
         .listRowInsets(EdgeInsets())
-//        .id(EventsSections.filterSection.id)
     }
 
     private var browseByCategoryView: some View {
@@ -180,7 +119,6 @@ public struct EventsOverviewView: View {
             ForEach(colors, id: \.self) { color in
                 EventsListCellView(image: EventsOverviewImageAssets.test.image,
                                    onTapInfoAction: {
-//                    presenter.routeToEventsDetails(eventId: "ABC")
                 },
                                    onTapCartAction: {
                     print("HStack in the child view was tapped!")
@@ -196,7 +134,6 @@ public struct EventsOverviewView: View {
         let rightAlignedItem = ToolBarItemDataBuilder()
             .setImage(Image(systemName: "person.crop.circle"))
             .setCallback {
-//                presenter.routeToSavedEvents()
             }
             .build()
         let rightAlignedSecondItem = ToolBarItemDataBuilder()
@@ -218,7 +155,6 @@ public struct EventsOverviewView: View {
             .setToolBarItems(toolBarItems)
             .setBackgroundColor(Theme.current.backgroundGray.color)
             .setTintColor(Theme.current.issBlack.color)
-//            .setForegroundColor(Theme.current.issBlack.color)
             .includeStatusBarArea(true)
             .build()
         return issNavBarData

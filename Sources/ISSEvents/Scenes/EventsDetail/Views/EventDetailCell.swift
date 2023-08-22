@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  EventDetailCell.swift
 //  
 //
 //  Copyright by iSoftStone 2023.
@@ -35,8 +35,6 @@ struct EventDetailCell: View {
         let lines = input.components(separatedBy: "\n")
         return lines.map { LineView(text: Text($0)) }
     }
-
-
 }
 
 // MARK: - View Components

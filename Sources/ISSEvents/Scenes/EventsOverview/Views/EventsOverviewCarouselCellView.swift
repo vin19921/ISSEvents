@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  EventsOverviewCarouselCellView.swift
 //  
 //
 //  Copyright by iSoftStone 2023.
@@ -9,9 +9,8 @@ import ISSTheme
 import SwiftUI
 
 struct EventsOverviewCarouselCellView: View {
-//    let color: Color
     let image: Image
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: .zero) {
             image

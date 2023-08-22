@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  EventsCheckOutView.swift
 //  
 //
 //  Copyright by iSoftStone 2023.
@@ -15,11 +15,6 @@ public struct EventsCheckOutView: View {
     @State private var selectedQuantity = 1
     private let singlePrice: Float = 50.00
     @StateObject private var promoCodeViewModel = PromoCodeViewModel.shared
-//    let promoCodeViewModel: PromoCodeViewModel
-
-//    @ObservableObject private var promoCodeControllerDelegateWrapper: EventsPromoCodeControllerDelegateWrapper
-//    @State private var promoCode: String = ""
-//    @EnvironmentObject var promoCodeViewModel: PromoCodeViewModel
 
     // MARK: Injection
 
@@ -27,12 +22,6 @@ public struct EventsCheckOutView: View {
 
     init(presenter: EventsCheckOutPresenter) {
         self.presenter = presenter
-//        _promoCodeControllerDelegateWrapper = StateObject(wrappedValue: EventsPromoCodeControllerDelegateWrapper { code in
-//            // Handle the promo code here in the SwiftUI view
-//            print("Promo Code Applied: \(code)")
-//        })
-//        let vm = PromoCodeViewModel()
-//        print(vm.$promoCode)
     }
 
     public var body: some View {
@@ -47,8 +36,6 @@ public struct EventsCheckOutView: View {
                             VStack(spacing: .zero) {
                                 EventsCheckOutDetailsView(selectedQuantity: $selectedQuantity)
                                 Spacer()
-//                                EventsCheckOutSummaryView(selectedQuantity: $selectedQuantity,
-//                                                          singlePrice: singlePrice)
                             }
                             .padding(.top)
                         }
@@ -57,7 +44,6 @@ public struct EventsCheckOutView: View {
                                                       singlePrice: singlePrice, didTapPromoCodeButton: {
                                 presenter.routeToEventsPromoCode()
                             }, didTapPayButton:  { presenter.routeToEventsPayment() })
-//                            DraggableBottomSheetView()
                         }
                     }
                     .background(Theme.current.grayDisabled.color)
@@ -76,13 +62,7 @@ public struct EventsCheckOutView: View {
         }
         .onAppear {
             print("promo code ::: \(promoCodeViewModel.promoCode)")
-//            print("promo code ::: \(vm.$promoCode)")
         }
-//        .environmentObject(promoCodeViewModel)
-//        .onReceive(promoCodeViewModel.$promoCode) { promoCode in
-//           // This block will be executed when the promoCodeViewModel's promoCode changes
-//           self.handlePromoCode(promoCode)
-//       }
     }
 
     private var navigationBarData: ISSNavigationBarBuilder.ISSNavigationBarData {
@@ -117,12 +97,3 @@ public struct EventsCheckOutView: View {
         // based on the applied promo code
     }
 }
-
-//// Conform ContentView to the SecondViewControllerDelegate protocol
-//extension EventsCheckOutView: EventsPromoCodeControllerDelegate {
-//    func didGetResult(result: String) {
-//        // Perform any action with the passed value in the SwiftUI view.
-//        valueFromSecondView = result
-//        print("\(valueFromSecondView)")
-//    }
-//}

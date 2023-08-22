@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  EventCellBottomView.swift
 //  
 //
 //  Copyright by iSoftStone 2023.
@@ -36,7 +36,7 @@ struct EventCellBottomView: View {
                     Rectangle()
                         .fill(Theme.current.issWhite.color)
                         .frame(width: 1, height: 32)
-//
+
                     HStack {
                         Image(systemName: "cart")
                             .resizable()
@@ -48,7 +48,6 @@ struct EventCellBottomView: View {
                     .background(Theme.current.issBlack.color)
                     .foregroundColor(.green)
                     .onTapGesture {
-//                        print("Button 2 tapped")
                         onTapCartAction?()
                     }
 
@@ -70,31 +69,6 @@ struct EventCellBottomView: View {
                         isFavorite.toggle()
                         print("Button 3 isFavorite ::: \(isFavorite)")
                     }
-
-//                    Image(systemName: "info.circle")
-//                        .resizable()
-//                        .aspectRatio(contentMode: .fit)
-//                        .frame(width: geometry.size.width / 3, height: 16)
-//                        .padding(.vertical, 8)
-//                        .onTapGesture {
-//                            print("Button 1 tapped")
-//                        }
-//                    Image(systemName: "cart")
-//                        .resizable()
-//                        .aspectRatio(contentMode: .fit)
-//                        .frame(width: geometry.size.width / 3, height: 16)
-//                        .padding(.vertical, 8)
-//                        .onTapGesture {
-//                            print("Button 2 tapped")
-//                        }
-//                    Image(systemName: "heart")
-//                        .resizable()
-//                        .aspectRatio(contentMode: .fit)
-//                        .frame(width: geometry.size.width / 3, height: 16)
-//                        .padding(.vertical, 8)
-//                        .onTapGesture {
-//                            print("Button 3 tapped")
-//                        }
                 }
             }
         }

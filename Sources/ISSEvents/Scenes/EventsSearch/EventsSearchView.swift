@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  EventsSearchView.swift
 //  
 //
 //  Copyright by iSoftStone 2023.
@@ -38,8 +38,6 @@ public struct EventsSearchView: View {
                 green: Double.random(in: 0...1),
                 blue: Double.random(in: 0...1)
             )
-
-//    let enableStartButton: (Bool) -> Void
 
     // MARK: Injection
 
@@ -144,7 +142,7 @@ public struct EventsSearchView: View {
                             print("onTapOutsideArea :::")
                             isFirstResponder = false
                         }
-//
+
                     case .failure:
                         VStack{
                             Text("Search Scene: Failure")
@@ -342,7 +340,6 @@ public struct EventsSearchView: View {
                 .frame(maxWidth: .infinity)
                 .background(Color.white)
             })
-//            .opacity(isDialogPresented ? 1.0 : 0.0)
             .animation(.easeOut(duration: 0.4), value: isDialogPresented)
         }
     }
@@ -425,12 +422,8 @@ struct MonthYearPicker: View {
                 .datePickerStyle(WheelDatePickerStyle())
                 .labelsHidden()
         }
-//        .frame(height: 200) // Adjust the frame size as needed
-//        .frame(maxWidth: UIScreen.main.bounds.width)
         .frame(width: UIScreen.main.bounds.width, height: 300)
         .background(Color.yellow)
-//        .padding(.top)
-//        .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
     }
 }
 

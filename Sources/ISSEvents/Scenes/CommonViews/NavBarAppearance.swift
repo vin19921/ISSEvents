@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  NavBarAppearance.swift
 //  
 //
 //  Copyright by iSoftStone 2023.

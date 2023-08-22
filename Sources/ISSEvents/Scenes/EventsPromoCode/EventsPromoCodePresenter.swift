@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  EventsPromoCodePresenter.swift
 //  
 //
 //  Copyright by iSoftStone 2023.
