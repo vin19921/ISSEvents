@@ -1,8 +1,8 @@
 //
 //  Bundle+Extension.swift
-//  ISS
 //
-//  Created by Wing Seng Chew on 20/06/2023.
+//
+//  Copyright by iSoftStone 2023.
 //
 
 import Foundation

@@ -2,7 +2,7 @@
 //  File.swift
 //  
 //
-//  Created by Wing Seng Chew on 22/06/2023.
+//  Copyright by iSoftStone 2023.
 //
 
 public struct EventTargetAudienceDataModel: Codable {

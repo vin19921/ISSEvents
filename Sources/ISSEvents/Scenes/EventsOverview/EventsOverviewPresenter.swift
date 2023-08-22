@@ -2,7 +2,7 @@
 //  File.swift
 //  
 //
-//  Created by Wing Seng Chew on 15/06/2023.
+//  Copyright by iSoftStone 2023.
 //
 
 import Combine
@@ -188,5 +188,21 @@ extension EventsOverviewPresenter {
     enum FailureType {
         case connectivity
         case internet
+    }
+}
+
+// MARK: - Routing
+
+extension EventsOverviewPresenter {
+    func routeToEventsSearch() {
+        router?.navigate(to: .searchScreen)
+    }
+
+    func routeToEventsCheckOut() {
+        router?.navigate(to: .checkoutScreen)
+    }
+
+    func routeToEventsDetails(eventId : String) {
+        router?.navigate(to: .detailsScreen(eventId: eventId))
     }
 }

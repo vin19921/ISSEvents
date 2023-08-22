@@ -2,7 +2,7 @@
 //  File.swift
 //  
 //
-//  Created by Wing Seng Chew on 20/06/2023.
+//  Copyright by iSoftStone 2023.
 //
 
 import UIKit
@@ -17,11 +17,17 @@ struct EventsOverviewRouter {
 
 extension EventsOverviewRouter: RoutingLogic {
     enum Destination {
+        case searchScreen
+        case checkoutScreen
         case detailsScreen(eventId: String)
     }
 
     func navigate(to destination: Destination) {
         switch destination {
+        case .searchScreen:
+            navigator.navigateToSearchScreen()
+        case .checkoutScreen:
+            navigator.navigateToCheckOutScreen()
         case let .detailsScreen(eventId):
             navigator.navigateToDetailsScreen(eventId: eventId)
         }
