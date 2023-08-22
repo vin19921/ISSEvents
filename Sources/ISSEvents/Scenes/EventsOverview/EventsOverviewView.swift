@@ -121,7 +121,7 @@ public struct EventsOverviewView: View {
                                    onTapInfoAction: {
                 },
                                    onTapCartAction: {
-                    print("HStack in the child view was tapped!")
+                    print("onTapInfoAction!")
                     presenter.routeToEventsCheckOut()
                 })
             }

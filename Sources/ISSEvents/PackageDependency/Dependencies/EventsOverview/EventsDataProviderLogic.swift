@@ -14,7 +14,6 @@ public protocol EventsDataProviderLogic {
     typealias EventsHandler = (Result<EventsOverviewWrapper, Error>) -> Void
     typealias EmployeeHandler = (Result<EmployeesResponse, Error>) -> Void
     func fetchEvents(completion: @escaping EventsHandler)
-    func fetchEmployee(completion: @escaping EmployeeHandler)
     func fetchEmployeeTest() -> AnyPublisher<EmployeesResponse, Error>
 }
 

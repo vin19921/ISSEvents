@@ -12,7 +12,6 @@ protocol EventsOverviewBusinessLogic {
     typealias EventsHandler = (Result<EventsOverviewWrapper, Error>) -> Void
     func fetchEvents(completion: @escaping EventsHandler)
     typealias EmployeeHandler = (Result<EmployeesResponse, Error>) -> Void
-    func fetchEmployee(completion: @escaping EmployeeHandler)
     func fetchEmployeeTest() -> AnyPublisher<EmployeeOverview.Model.Response, Error>
 }
 
@@ -26,10 +25,6 @@ final class EventsOverviewInteractor: EventsOverviewBusinessLogic {
 
     func fetchEvents(completion: @escaping EventsHandler) {
         provider.fetchEvents(completion: completion)
-    }
-
-    func fetchEmployee(completion: @escaping EmployeeHandler) {
-        provider.fetchEmployee(completion: completion)
     }
 
     func fetchEmployeeTest() -> AnyPublisher<EmployeeOverview.Model.Response, Error> {

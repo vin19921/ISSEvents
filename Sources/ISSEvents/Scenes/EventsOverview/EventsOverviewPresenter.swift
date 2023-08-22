@@ -65,6 +65,7 @@ final class EventsOverviewPresenter: ObservableObject {
 
     func handleEventsResponse(response: EmployeeOverview.Model.Response) {
         let viewModel = EmployeeOverview.Model.ViewModel(employeeList: response.employees)
+        print("Employee viewModel ::: \(viewModel)")
         self.state = .success(viewModel)
     }
 }
