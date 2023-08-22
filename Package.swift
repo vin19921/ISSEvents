@@ -14,8 +14,8 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "https://github.com/vin19921/iSSBooking-iOS-Theme", branch: "develop"),
-        .package(url: "https://github.com/vin19921/iSSBooking-iOS-CommonUI", branch: "develop"),
+        .package(url: "https://github.com/iSoftStoneMY/iSSBooking-iOS-Theme", branch: "develop"),
+        .package(url: "https://github.com/iSoftStoneMY/iSSBooking-iOS-CommonUI", branch: "develop"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
